@@ -28,14 +28,14 @@ class RecipePreviewViewController: UIViewController {
         return label
     }()
 
-    private let favoriteButton: UIButton = {
-       let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .red
-        button.setTitle("Add To Favorite", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 7
-        return button
+    private let calLabel: UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .systemGray2
+        label.numberOfLines = 0
+        label.layer.cornerRadius = 120/2
+        label.font = .systemFont(ofSize: 18, weight: .semibold)
+        return label
     }()
     
     private let webView: WKWebView = {
@@ -50,7 +50,7 @@ class RecipePreviewViewController: UIViewController {
         view.addSubview(webView)
         view.addSubview(titleLabel)
         view.addSubview(overViewLabel)
-        view.addSubview(favoriteButton)
+        view.addSubview(calLabel)
         
         configureConstraints()
     }
@@ -60,7 +60,7 @@ class RecipePreviewViewController: UIViewController {
             webView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            webView.heightAnchor.constraint(equalToConstant: 320)
+            webView.heightAnchor.constraint(equalToConstant: 300)
         ]
         
         let titleLabelConstraints = [
@@ -74,23 +74,24 @@ class RecipePreviewViewController: UIViewController {
             overViewLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ]
         
-        let favoriteButtonConstraints = [
-            favoriteButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            favoriteButton.topAnchor.constraint(equalTo: overViewLabel.bottomAnchor, constant: 25),
-            favoriteButton.widthAnchor.constraint(equalToConstant: 150),
-            favoriteButton.heightAnchor.constraint(equalToConstant: 40)
+        let calLabelConstraints = [
+            calLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            calLabel.topAnchor.constraint(equalTo: overViewLabel.bottomAnchor, constant: 25),
+            calLabel.widthAnchor.constraint(equalToConstant: 170),
+            calLabel.heightAnchor.constraint(equalToConstant: 40)
         ]
         
         NSLayoutConstraint.activate(webViewConstraints)
         NSLayoutConstraint.activate(titleLabelConstraints)
         NSLayoutConstraint.activate(overViewConstraints)
-        NSLayoutConstraint.activate(favoriteButtonConstraints)
+        NSLayoutConstraint.activate(calLabelConstraints)
     }
     
 
     func configure(with model: RecipePreviewViewModel){
         titleLabel.text = model.title
         overViewLabel.text = model.recipeDesc
+        calLabel.text = model.calories
         
         guard let url = URL(string: "https://www.youtube.com/embed/\(model.youtubeView.id.videoId)") else { return }
         

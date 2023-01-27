@@ -104,7 +104,7 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
           tableView.deselectRow(at: indexPath, animated: true)
           
-          let desc = foods[indexPath.row]
+          let item = foods[indexPath.row]
           
           let food = foods[indexPath.row].name
          
@@ -113,7 +113,7 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
               case .success(let videoElement):
                   DispatchQueue.main.async {
                        let vc = RecipePreviewViewController()
-                    vc.configure(with: RecipePreviewViewModel(title: food ?? "", youtubeView: videoElement, recipeDesc: desc.desc ?? ""))
+                    vc.configure(with: RecipePreviewViewModel(title: food ?? "", youtubeView: videoElement, recipeDesc: item.desc ?? "" , calories: item.calories ?? ""))
                                      self?.navigationController?.pushViewController(vc, animated: true)
                                      
                   }

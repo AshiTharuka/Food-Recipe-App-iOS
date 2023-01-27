@@ -94,7 +94,7 @@ extension CollectionTableViewCell: UICollectionViewDelegate, UICollectionViewDat
                 let title = self?.foods[indexPath.row]
                 guard let recipeOverView = title?.Desc else { return }
                 guard let strongSelf = self else { return }
-                let viewModel = RecipePreviewViewModel(title: food , youtubeView: videoElement, recipeDesc: recipeOverView)
+                let viewModel = RecipePreviewViewModel(title: food , youtubeView: videoElement, recipeDesc: recipeOverView, calories: title?.Calories ?? "")
                 self?.delegate?.CollectionTableViewCellDidTapCell(strongSelf, viewModel: viewModel)
             case .failure(let error):
                 print(error.localizedDescription)

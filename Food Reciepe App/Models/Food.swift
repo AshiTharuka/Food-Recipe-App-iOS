@@ -29,6 +29,7 @@ struct Food: Codable {
     let Category: String
     let Desc: String
     let url: String
+    let Calories: String
     
     private enum FoodKeys: String, CodingKey {
         case fields
@@ -39,6 +40,7 @@ struct Food: Codable {
         case Category
         case url
         case Desc
+        case Calories
     }
     
     init(from decoder: Decoder) throws {
@@ -49,6 +51,7 @@ struct Food: Codable {
         Category = try fieldContainer.decode(StringValue.self, forKey: .Category).value
         Desc = try fieldContainer.decode(StringValue.self, forKey: .Desc).value
         url = try fieldContainer.decode(StringValue.self, forKey: .url).value
+        Calories = try fieldContainer.decode(StringValue.self, forKey: .Calories).value
         
     }
 }

@@ -70,7 +70,7 @@ extension SearchFoodViewController: UICollectionViewDelegate, UICollectionViewDa
         APICaller.shared.getFoodDesc(with: titleName ) { [weak self] result in
                  switch result {
                  case .success(let videoElement):
-                    self?.delegate?.SearchFoodViewControllerDidTapItem(RecipePreviewViewModel(title: titleName, youtubeView: videoElement, recipeDesc: food.Desc ?? ""))
+                    self?.delegate?.SearchFoodViewControllerDidTapItem(RecipePreviewViewModel(title: titleName, youtubeView: videoElement, recipeDesc: food.Desc ?? "", calories: food.Calories))
                     
                  case .failure(let error):
                      print(error.localizedDescription)

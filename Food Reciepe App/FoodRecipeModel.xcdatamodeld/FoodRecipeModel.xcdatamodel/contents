@@ -4,8 +4,8 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="category" optional="YES" attributeType="String"/>
 		<attribute name="desc" optional="YES" attributeType="String"/>
+		<attribute name="calories" optional="YES" attributeType="String"/>
 		<attribute name="url" optional="YES" attributeType="String"/>
     </entity>
 </model>
-
 

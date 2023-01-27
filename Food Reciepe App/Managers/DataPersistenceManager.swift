@@ -31,6 +31,7 @@ class DataPersistenceManager {
         item.category = model.Category
         item.desc = model.Desc
         item.url = model.url
+        item.calories = model.Calories
         
         do{
             try context.save()

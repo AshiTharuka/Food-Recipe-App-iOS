@@ -12,5 +12,6 @@ struct RecipePreviewViewModel {
     let title: String
     let youtubeView: VideoElement
     let recipeDesc: String
+    let calories: String
     
 }

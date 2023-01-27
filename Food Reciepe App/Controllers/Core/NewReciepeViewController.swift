@@ -87,7 +87,7 @@ extension NewReciepeViewController: UITableViewDelegate, UITableViewDataSource {
             case .success(let videoElement):
                 DispatchQueue.main.async {
                      let vc = RecipePreviewViewController()
-                                   vc.configure(with: RecipePreviewViewModel(title: food, youtubeView: videoElement, recipeDesc: desc.Desc ?? ""))
+                    vc.configure(with: RecipePreviewViewModel(title: food, youtubeView: videoElement, recipeDesc: desc.Desc ?? "", calories: desc.Calories))
                                    self?.navigationController?.pushViewController(vc, animated: true)
                                    
                 }
