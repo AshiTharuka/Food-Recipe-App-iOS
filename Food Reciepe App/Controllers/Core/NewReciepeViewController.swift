@@ -38,7 +38,7 @@ class NewReciepeViewController: UIViewController {
     }
     
     private func fetchNewRecipe(){
-        APICaller.shared.getDessertFoods{ [weak self] result in
+        APICaller.shared.getTrendingFoods{ [weak self] result in
             switch result {
             case .success(let foods):
                 self?.foods = foods

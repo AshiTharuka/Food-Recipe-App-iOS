@@ -77,7 +77,7 @@ class RecipePreviewViewController: UIViewController {
         let calLabelConstraints = [
             calLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             calLabel.topAnchor.constraint(equalTo: overViewLabel.bottomAnchor, constant: 25),
-            calLabel.widthAnchor.constraint(equalToConstant: 170),
+            calLabel.widthAnchor.constraint(equalToConstant: 180),
             calLabel.heightAnchor.constraint(equalToConstant: 40)
         ]
         

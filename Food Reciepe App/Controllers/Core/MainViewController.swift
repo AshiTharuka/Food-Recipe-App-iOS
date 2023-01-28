@@ -25,11 +25,11 @@ class MainViewController: UITabBarController {
         
         home.tabBarItem.image = UIImage(systemName: "house")
         search.tabBarItem.image = UIImage(systemName: "magnifyingglass")
-        newrep.tabBarItem.image = UIImage(systemName: "person")
+        newrep.tabBarItem.image = UIImage(systemName: "book")
         fav.tabBarItem.image = UIImage(systemName: "heart")
         home.title = "Home"
         search.title = "Search"
-        newrep.title = "Profile"
+        newrep.title = "New Recipes"
         fav.title = "Favorite"
         
         tabBar.tintColor = .label

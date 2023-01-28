@@ -112,7 +112,7 @@ class APICaller {
     
     func getSearchFoods(completion: @escaping (Result<[Food],Error>) -> Void){
         
-        guard let url = URL(string: "\(Constants.baseURL)/food-reciepe-iosapp/databases/(default)/documents/Diets_Food") else { return }
+        guard let url = URL(string: "\(Constants.baseURL)/food-reciepe-iosapp/databases/(default)/documents/Trending_Food") else { return }
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else { return }
         
@@ -182,5 +182,28 @@ class APICaller {
                
                task.resume()
     }
+    
+    
+     func getTrendingFoods(completion: @escaping (Result<[Food],Error>) -> Void){
+           
+           guard let url = URL(string: "\(Constants.baseURL)/food-reciepe-iosapp/databases/(default)/documents/Trending_Food") else { return }
+           let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+               guard let data = data, error == nil else { return }
+           
+               do{
+                   let results = try JSONDecoder().decode(FoodResponses.self, from: data)
+                   completion(.success(results.foods))
+                   
+                   
+                   //print(results)
+               }catch {
+                   
+                   completion(.failure(APIError.failedTogetData))
+               }
+           
+           }
+           
+           task.resume()
+       }
     
 }

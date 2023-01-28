@@ -20,10 +20,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController =
-            //LoginController()
-            MainViewController()
+            LoginController()
+            //MainViewController()
         window?.makeKeyAndVisible()
+        
         FirebaseApp.configure()
+       
+        
+         
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
