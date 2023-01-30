@@ -13,6 +13,7 @@ import FirebaseAuth
 class LoginController: UIViewController {
     
     var loginView: LoginView!
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +47,7 @@ class LoginController: UIViewController {
             else {
               
                 print("User: \(user?.user) signed in")
-                
-                
+                self.defaults.set(false, forKey: "UserLoggedIn")
                 
                 
                let mainviewController = UINavigationController(rootViewController: MainViewController())

@@ -31,10 +31,11 @@ class RecipePreviewViewController: UIViewController {
     private let calLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .systemGray2
+        label.backgroundColor = .systemGray3
         label.numberOfLines = 0
         label.layer.cornerRadius = 120/2
         label.font = .systemFont(ofSize: 18, weight: .semibold)
+        
         return label
     }()
     
@@ -79,6 +80,7 @@ class RecipePreviewViewController: UIViewController {
             calLabel.topAnchor.constraint(equalTo: overViewLabel.bottomAnchor, constant: 25),
             calLabel.widthAnchor.constraint(equalToConstant: 180),
             calLabel.heightAnchor.constraint(equalToConstant: 40)
+            
         ]
         
         NSLayoutConstraint.activate(webViewConstraints)

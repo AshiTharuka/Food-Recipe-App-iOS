@@ -11,7 +11,9 @@ import Firebase
 
 class SignupController: UIViewController {
     
+    
     var signUpView: SignupView!
+    var defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,7 @@ class SignupController: UIViewController {
             }
             else {
                 guard let uid = result?.user.uid else { return }
+                self.defaults.set(false, forKey: "UserLoggedIn")
                 print("Successfully Created a User", uid)
                 self.dismiss(animated: true, completion: nil)
             }

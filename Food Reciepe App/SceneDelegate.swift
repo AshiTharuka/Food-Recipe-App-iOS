@@ -12,22 +12,30 @@ import Firebase
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
+    let defaults = UserDefaults.standard
+    var userLoggedIn: Bool?
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController =
-            LoginController()
-            //MainViewController()
+        window?.rootViewController = LoginController()
+        let loginController = UINavigationController(rootViewController:  LoginController())
+        let mainController = UINavigationController(rootViewController:  MainViewController())
         window?.makeKeyAndVisible()
         
         FirebaseApp.configure()
+        userLoggedIn = defaults.bool(forKey: "UserLoggedIn")
+        
+        if userLoggedIn == true {
+            window?.rootViewController = mainController
+        }else {
+            window?.rootViewController = loginController
+        }
        
         
-         
+        
         
         
     }

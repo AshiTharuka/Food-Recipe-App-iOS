@@ -37,7 +37,6 @@
 		5AD46C402982D1E10015F428 /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD46C3F2982D1E10015F428 /* YoutubeSearchResponse.swift */; };
 		5AF3619D298436F6001106E7 /* FoodRecipeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AF3619B298436F6001106E7 /* FoodRecipeModel.xcdatamodeld */; };
 		5AF4C0302981EC1600A4B128 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AF4C02F2981EC1500A4B128 /* GoogleService-Info.plist */; };
-		5AF4C0322981ECEE00A4B128 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF4C0312981ECED00A4B128 /* logo.png */; };
 		C44256BB51B07B5F70874B6B /* Pods_Food_Reciepe_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F451B065FB09A112E35A2E8 /* Pods_Food_Reciepe_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +72,6 @@
 		5AD46C3F2982D1E10015F428 /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
 		5AF3619C298436F6001106E7 /* FoodRecipeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodRecipeModel.xcdatamodel; sourceTree = "<group>"; };
 		5AF4C02F2981EC1500A4B128 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5AF4C0312981ECED00A4B128 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../../../Users/ashi/Desktop/logo.png; sourceTree = "<group>"; };
 		71BD0C307E65F75A093B2B76 /* Pods-Food Reciepe App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Reciepe App.release.xcconfig"; path = "Target Support Files/Pods-Food Reciepe App/Pods-Food Reciepe App.release.xcconfig"; sourceTree = "<group>"; };
 		DC70D08C876028FD76F1A834 /* Pods-Food Reciepe App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Reciepe App.debug.xcconfig"; path = "Target Support Files/Pods-Food Reciepe App/Pods-Food Reciepe App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,7 +121,6 @@
 				5A1872DF2964109400B4F950 /* AppDelegate.swift */,
 				5A1872E12964109400B4F950 /* SceneDelegate.swift */,
 				5A1872E82964109700B4F950 /* Assets.xcassets */,
-				5AF4C0312981ECED00A4B128 /* logo.png */,
 				5A1872EA2964109700B4F950 /* LaunchScreen.storyboard */,
 				5A1872ED2964109700B4F950 /* Info.plist */,
 				5AF4C02F2981EC1500A4B128 /* GoogleService-Info.plist */,
@@ -304,7 +301,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AF4C0322981ECEE00A4B128 /* logo.png in Resources */,
 				5A1872EC2964109700B4F950 /* LaunchScreen.storyboard in Resources */,
 				5A1872E92964109700B4F950 /* Assets.xcassets in Resources */,
 				5AF4C0302981EC1600A4B128 /* GoogleService-Info.plist in Resources */,

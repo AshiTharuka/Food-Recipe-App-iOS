@@ -18,6 +18,8 @@ enum Section: Int {
 
 class HomeViewController: UIViewController {
     
+    let defaults = UserDefaults.standard
+    
     private var randomFoods: Food?
     private var headerView: BreakfastHeaderView?
     
@@ -66,9 +68,23 @@ class HomeViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
         
         navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: UIImage(systemName: "slider.horizontal.3"), style: .done, target: self, action: nil)
+            UIBarButtonItem(title: "LogOut", style: .plain, target: self, action: #selector(logOut))
         ]
         navigationController?.navigationBar.tintColor = .black
+    }
+    
+    @objc func logOut() {
+        print("Logout")
+        
+        do {
+            try Auth.auth().signOut()
+            defaults.set(false,forKey: "UserLoggedIn")
+            let loginController = UINavigationController(rootViewController: LoginController())
+            loginController.modalPresentationStyle = .fullScreen
+            present(loginController, animated: true, completion: nil)
+        }catch {
+            print(error.localizedDescription)
+        }
     }
     
     
