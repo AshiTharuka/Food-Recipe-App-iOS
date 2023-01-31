@@ -66,6 +66,7 @@ class SignupView: UIView {
         placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18), .foregroundColor: UIColor(white: 1, alpha: 0.7) ]))
         tf.attributedPlaceholder = placeholder
         tf.setAnchor(width: 0, height: 40)
+        tf.isSecureTextEntry = true
         tf.setLeftPaddingPoints(20)
         return tf
         
@@ -84,6 +85,7 @@ class SignupView: UIView {
         placeholder = NSMutableAttributedString(attributedString: NSAttributedString(string: "Confirm Password", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18), .foregroundColor: UIColor(white: 1, alpha: 0.7) ]))
         tf.attributedPlaceholder = placeholder
         tf.setAnchor(width: 0, height: 40)
+        tf.isSecureTextEntry = true
         tf.setLeftPaddingPoints(20)
         return tf
         

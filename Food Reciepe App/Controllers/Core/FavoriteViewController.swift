@@ -87,7 +87,7 @@ extension FavoriteViewController: UITableViewDelegate, UITableViewDataSource {
             DataPersistenceManager.shared.deleteFoodWith(model: foods[indexPath.row]) { [weak self] result in
                 switch result {
                 case .success():
-                    print("Deleted from th DB")
+                    print("Deleted from the DB")
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

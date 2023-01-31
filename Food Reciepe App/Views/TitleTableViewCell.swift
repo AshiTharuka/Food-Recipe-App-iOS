@@ -32,6 +32,7 @@ class TitleTableViewCell: UITableViewCell {
         imgView.contentMode = .scaleAspectFill
          imgView.translatesAutoresizingMaskIntoConstraints = false
         imgView.clipsToBounds = true
+        imgView.layer.masksToBounds = true
         return imgView
     }()
     
